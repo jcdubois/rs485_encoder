@@ -1,0 +1,7 @@
+[package]
+name = "rs485_encode"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libftd2xx = "0.33.1"
