@@ -25,13 +25,10 @@ impl Encoding for NRZEncoding {
     }
 
     fn encode(&self, input: &[u8]) -> Vec<u8> {
-        println!("Encoded output (raw): {:?}", input);
         input.to_vec() // No encoding, return input directly
     }
 
     fn decode(&self, encoded: &[u8]) -> io::Result<Vec<u8>> {
-        println!("Received buffer before decoding: {:?}", encoded);
-        println!("Decoded output: {:?}", encoded);
         Ok(encoded.to_vec()) // No decoding, return encoded directly
     }
 }
@@ -58,7 +55,6 @@ impl Encoding for NRZIEncoding {
                 }
             }
         }
-        println!("Encoded output (raw): {:?}", encoded);
         encoded
     }
 
@@ -74,8 +70,6 @@ impl Encoding for NRZIEncoding {
                 last_state = current_state;
             }
         }
-        println!("Received buffer before decoding: {:?}", encoded);
-        println!("Decoded output: {:?}", decoded);
         Ok(decoded)
     }
 }
